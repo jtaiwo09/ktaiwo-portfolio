@@ -71,7 +71,10 @@ const Navbar = () => {
           </nav>
           <div className="flex items-center gap-4">
             <ThemeSwitch />
-            <FiMenu className="text-2xl md:hidden" onClick={toggleShowNavbar} />
+            <FiMenu
+              className="text-2xl md:hidden text-secondary dark:text-primary"
+              onClick={toggleShowNavbar}
+            />
           </div>
         </div>
       </div>
