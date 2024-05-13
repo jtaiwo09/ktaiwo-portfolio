@@ -1,16 +1,29 @@
 "use client";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
+  const audioRef = useRef<any>(null);
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+    if (audioRef.current) {
+      audioRef.current.volume = 0.3;
+    }
+  }, [audioRef?.current]);
+
+  const toggleTheme = () => {
+    if (resolvedTheme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+    audioRef.current.play();
+  };
 
   if (!mounted)
     return (
@@ -24,23 +37,24 @@ const ThemeSwitch = () => {
         title="Loading Light/Dark Toggle"
       />
     );
-  if (resolvedTheme === "dark") {
-    return (
-      <FiSun
-        className="text-2xl cursor-pointer"
-        onClick={() => setTheme("light")}
-      />
-    );
-  }
-
-  if (resolvedTheme === "light") {
-    return (
-      <FiMoon
-        className="text-2xl cursor-pointer"
-        onClick={() => setTheme("dark")}
-      />
-    );
-  }
+  return (
+    <>
+      {resolvedTheme === "dark" ? (
+        <FiSun
+          className="text-2xl cursor-pointer"
+          onClick={toggleTheme}
+          title="Activate dark mode"
+        />
+      ) : (
+        <FiMoon
+          className="text-2xl cursor-pointer"
+          onClick={toggleTheme}
+          title="Activate light mode"
+        />
+      )}
+      <audio src="/sounds/click.wav" ref={audioRef} className="hidden"></audio>
+    </>
+  );
 };
 
 export default ThemeSwitch;

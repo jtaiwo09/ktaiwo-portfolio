@@ -10,11 +10,11 @@ const Hero = () => {
           Hi, my name is
         </h2>
         <div>
-          <h1 className="text-secondary dark:text-info text-[40px] md:text-[60px] lg:text-[75px] font-sans font-extrabold leading-normal mb-2">
+          <h1 className="text-secondary dark:text-info text-[34px] sm:text-[40px] md:text-[60px] lg:text-[75px] font-sans font-extrabold leading-normal mb-2">
             Taiwo Joseph
             <span className="inline-block h-2 w-2 sm:w-3 sm:h-3 rounded-full ml-1 bg-green-700 dark:bg-primary"></span>
           </h1>
-          <h1 className="text-green-700 dark:text-warning text-[40px] md:text-[60px] lg:text-[75px] font-sans font-extrabold leading-normal">
+          <h1 className="text-green-700 dark:text-warning text-[34px] sm:text-[40px] md:text-[60px] lg:text-[75px] font-sans font-extrabold leading-normal">
             I build things for the web
           </h1>
         </div>
