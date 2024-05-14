@@ -55,7 +55,7 @@ const About = () => {
         <Reveal
           hidden={{ x: "100%", opacity: 0 }}
           visible={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
           extraClass="md:max-w-[350px] h-[350px] md:w-5/12 w-full"
           innerClass="w-full h-full"
         >

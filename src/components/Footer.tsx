@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="text-sm font-mono">
         <h5 className="w-fit mx-auto text-center">
           Built with <FaHeart className="text-red-500 text-lg inline-block" />{" "}
-          by Taiwo Joseph - {new Date().getFullYear()}©
+          by Taiwo Joseph - ©{new Date().getFullYear()}
         </h5>
       </div>
     </footer>

@@ -30,8 +30,8 @@ const staggeredVariant = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 0.3 * index,
-      duration: 0.6,
+      delay: 0.5 * index,
+      duration: 0.8,
     },
   }),
 };

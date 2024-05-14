@@ -12,7 +12,7 @@ const ThemeSwitch = () => {
   useEffect(() => {
     setMounted(true);
     if (audioRef.current) {
-      audioRef.current.volume = 0.3;
+      audioRef.current.volume = 0.6;
     }
   }, [audioRef?.current]);
 
