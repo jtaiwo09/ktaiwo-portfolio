@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "./Title";
 import Project from "./Project";
+import Reveal from "./Reveal";
 
 const data = [
   {
@@ -37,12 +38,32 @@ const Work = () => {
   return (
     <div className="container py-10" id="work">
       <Title text="Work" before="03." />
-      <p className="font-mono text-secondary dark:text-primary my-4 text-sm lg:text-xl font-medium">
-        Featured Projects
-      </p>
+      <Reveal
+        extraClass="w-full"
+        showSlide={false}
+        transition={{ delay: 0.6, duration: 0.5 }}
+      >
+        <p className="font-mono text-secondary dark:text-primary my-4 text-sm lg:text-xl font-medium">
+          Featured Projects
+        </p>
+      </Reveal>
+
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] w-full gap-6 mt-10">
         {data.map((el, i) => (
-          <Project key={i} data={el} />
+          <Reveal
+            key={i}
+            visible={{
+              y: 0,
+              opacity: 1,
+              transition: {
+                delay: 0.2 * i,
+                duration: 0.6,
+              },
+            }}
+            showSlide={false}
+          >
+            <Project data={el} index={i} />
+          </Reveal>
         ))}
       </div>
     </div>
