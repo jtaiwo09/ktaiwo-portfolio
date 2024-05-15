@@ -28,8 +28,9 @@ const Hero = () => {
 
         <Reveal extraClass="my-8">
           <p className="text-secondary dark:text-warning sm:text-[18px] font-sans max-w-xl">
-            I’m a design minded full stack engineer with a focus on creating
-            usable and aesthetically pleasing products.
+            I&apos;m a frontend engineer with a passion for crafting beautiful
+            and intuitive user experiences. I possess a strong sense of design
+            aesthetics and a knack for cutting-edge technologies.
           </p>
         </Reveal>
         <Reveal>

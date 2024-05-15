@@ -24,21 +24,31 @@ const About = () => {
     <div className="container py-10" id="about">
       <Title text="About" before="02." />
       <div className="flex flex-col-reverse md:flex-row justify-between gap-8">
-        <div className="w-full md:w-7/12 flex flex-col gap-y-6 justify-between sm:text-left ">
+        <div className="font-sans text-base sm:text-lg w-full md:w-7/12 flex flex-col gap-y-6 justify-between sm:text-left ">
           <Reveal>
-            <p className="font-sans text-lg">
-              I’m an ambitious Front-End Developer who&apos;s passionate about
-              coding and looking for a role in the established IT company with
-              the opportunity to work with the latest technologies on
-              challenging and diverse projects. I currently work with Spleet
-              Africa, a prop-tech company in Nigeria as a lead Frontend
-              engineer. I love to build cool UI effects, dynamic webpages with
-              amazing animations and creating intuitive, dynamic user
-              experiences. I also love to reach out to new opportunities accross
-              the globe that will enhance my skills and get the opporutinity to
-              work with other programmers as well If I could say one of the most
-              interesting things about me, it&apos;s the fact that I&apos;m
-              always ready for any challenges that comes to my way.
+            <p>
+              I&apos;ve built products for companies and businesses ranging from
+              small to large-scale and enterprise-level applications with focus
+              on fast, elegant and accessible user experiences.
+            </p>
+          </Reveal>
+          <Reveal>
+            <p>
+              Currently, I work at Spleet Africa as a Lead Frontend Engineer,
+              where I built a rental solution for landlords and tenants,
+              crafting thoughtful and inclusive experiences that adhere to web
+              standards.
+            </p>
+          </Reveal>
+          <Reveal>
+            <p>
+              My passion for innovation and technology led me to co-found
+              CitiTasker Technology, a platform that connects individuals in
+              need of outsourcing tasks or local services with providers looking
+              to earn money. The project is still in the development phase. In
+              my role as the lead frontend engineer, I am committed to designing
+              user-friendly and captivating experiences that empower users to
+              effortlessly navigate the application.
             </p>
           </Reveal>
           <Reveal>
