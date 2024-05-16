@@ -5,6 +5,24 @@ import Link from "next/link";
 import { FiDownload, FiMenu } from "react-icons/fi";
 import { StoreContext } from "@/providers";
 import { MdClose } from "react-icons/md";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
+      duration: 0.5,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: -30 },
+  show: { opacity: 1, y: 0 },
+};
 
 const data = [
   {
@@ -39,9 +57,14 @@ const Navbar = () => {
         </Link>
         <div className="flex items-center gap-x-6">
           <nav className="hidden md:block">
-            <ul className="flex items-center gap-x-8">
+            <motion.ul
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="flex items-center gap-x-8"
+            >
               {data.map((el, i) => (
-                <li key={i} className="">
+                <motion.li key={i} variants={item}>
                   <Link
                     href={el.href}
                     className="flex gap-x-1 text-xxs items-center"
@@ -53,7 +76,7 @@ const Navbar = () => {
                       {el.name}
                     </p>
                   </Link>
-                </li>
+                </motion.li>
               ))}
               <li>
                 <a
@@ -67,7 +90,7 @@ const Navbar = () => {
                   </button>
                 </a>
               </li>
-            </ul>
+            </motion.ul>
           </nav>
           <div className="flex items-center gap-4">
             <ThemeSwitch />

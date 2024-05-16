@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "Taiwo Joseph: Frontend developer",
   },
   description:
-    "Taiwo Joseph is a frontend developer highly skilled and passionate about creating visually appealing and user-friendly experiences.",
+    "Taiwo Joseph is a software Engineer highly skilled and passionate about creating visually appealing and user-friendly experiences.",
   applicationName: "Taiwo Joseph Portfolio",
   authors: [{ name: "Taiwo Joseph" }],
   generator: "Next.js",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Taiwo Joseph",
     description:
-      "Taiwo Joseph is a frontend developer highly skilled and passionate about creating visually appealing and user-friendly experiences.",
+      "Taiwo Joseph is a software Engineer highly skilled and passionate about creating visually appealing and user-friendly experiences.",
     url: "",
     siteName: "Taiwo Joseph Portfolio",
     locale: "en_US",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     site: "@KelvinJoseph10",
     title: "Taiwo Joseph",
     description:
-      "Taiwo Joseph is a frontend developer highly skilled and passionate about creating visually appealing and user-friendly experiences.",
+      "Taiwo Joseph is a software Engineer highly skilled and passionate about creating visually appealing and user-friendly experiences.",
     creator: "Taiwo Joseph",
     images: {
       url: "",
