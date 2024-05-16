@@ -102,13 +102,13 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`fixed h-dvh left-0 top-0 w-full bg-transparent z-[100] transition-all ${
+        className={`fixed h-dvh backdrop-blur-sm left-0 top-0 w-full bg-transparent z-[100] transition-all ${
           showNav ? "translate-x-0" : "translate-x-full delay-300"
         }`}
         onClick={toggleShowNavbar}
       >
         <div
-          className={`w-[70%] transition-transform duration-300 shadow-[0_0_30px_-15px_rgba(0,0,0,0.3)] bg-white dark:bg-secondary fixed top-0 right-0 h-dvh ${
+          className={`w-[70%] transition-transform duration-300 shadow-[0_0_30px_-15px_rgba(0,0,0,0.3)] bg-white dark:bg-accent fixed top-0 right-0 h-dvh ${
             showNav ? "translate-x-0" : "translate-x-[100%]"
           }`}
           onClick={(e) => e.stopPropagation()}
