@@ -17,6 +17,7 @@ const skills = [
   "MongoDB",
   "React Query",
   "Tailwind CSS",
+  "Material UI",
 ];
 
 const About = () => {
@@ -34,10 +35,18 @@ const About = () => {
           </Reveal>
           <Reveal>
             <p>
-              Currently, I work at Spleet Africa as a Lead Frontend Engineer,
-              where I built a rental solution for landlords and tenants,
-              crafting thoughtful and inclusive experiences that adhere to web
-              standards.
+              Currently, I work at Wosom as a Senior Frontend Engineer crafting
+              thoughtful and inclusive experiences that adhere to web standards
+            </p>
+          </Reveal>
+          <Reveal>
+            <p>
+              Prior to Wosom, I worked at Spleet Africa as a Lead Frontend
+              Engineer, where I built a rental solution for landlords and
+              tenants. I built a marketplace product where home owners can lease
+              apartments, and renters can rent apartment and pay flexibly. Also
+              I built a credit facility product that allows renters access to
+              loans to finance their rent.
             </p>
           </Reveal>
           <Reveal>
