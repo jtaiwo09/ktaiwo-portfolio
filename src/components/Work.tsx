@@ -18,13 +18,13 @@ const data = [
     url: "https://truhr.vercel.app",
     technologies: ["Typescript", "NextJS", "Tailwind"],
   },
-  {
-    name: "CitiTasker",
-    description:
-      "CitiTasker is a trusted community platform that connects people who need to outsource tasks and find local services, with people who are looking to earn money",
-    url: "https://cititasker.vercel.app/waitlist",
-    technologies: ["Typescript", "NextJS", "Tailwind"],
-  },
+  // {
+  //   name: "CitiTasker",
+  //   description:
+  //     "CitiTasker is a trusted community platform that connects people who need to outsource tasks and find local services, with people who are looking to earn money",
+  //   url: "https://cititasker.vercel.app/waitlist",
+  //   technologies: ["Typescript", "NextJS", "Tailwind"],
+  // },
   {
     name: "Blac Box",
     description:

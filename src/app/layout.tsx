@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "",
+        url: "https://res.cloudinary.com/wosom/image/upload/v1739782444/profile_wuvkzj.jpg",
         secureUrl: "",
         width: "1200",
         height: "630",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
       "Taiwo Joseph is a software Engineer highly skilled and passionate about creating visually appealing and user-friendly experiences.",
     creator: "Taiwo Joseph",
     images: {
-      url: "",
+      url: "https://res.cloudinary.com/wosom/image/upload/v1739782444/profile_wuvkzj.jpg",
       alt: "Preview Image for Taiwo Joseph",
     },
   },

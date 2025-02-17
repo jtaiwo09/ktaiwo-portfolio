@@ -135,6 +135,18 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+            <li className="mb-3 last:mb-0" onClick={toggleShowNavbar}>
+              <a
+                href="/cv.pdf"
+                download={true}
+                className="flex gap-x-1 text-base items-center px-4 py-2"
+              >
+                <span className="text-green-700 dark:text-primary">{`0${5}.`}</span>
+                <p className="text-secondary dark:text-info dark:hover:text-primary">
+                  Resume
+                </p>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
