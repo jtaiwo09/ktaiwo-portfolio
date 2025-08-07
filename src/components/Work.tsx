@@ -5,6 +5,20 @@ import Reveal from "./Reveal";
 
 const data = [
   {
+    name: "GoSource",
+    description:
+      "A Nigerian tech-driven logistics and supply-chain firm that builds tailored procurement solutions for food businesses, helping streamline operations across ordering, storage, and delivery.",
+    url: "https://gosource.app/home",
+    technologies: ["VueJS", "NuxtJS", "Tailwind"],
+  },
+  {
+    name: "Independent Purchasing Company (IPC)",
+    description:
+      "A Nigerian tech-driven logistics and supply-chain firm that builds tailored procurement solutions for food businesses, helping streamline operations across ordering, storage, and delivery.",
+    url: "https://www.ipc-africa.com/",
+    technologies: ["VueJS", "NuxtJS", "Tailwind"],
+  },
+  {
     name: "Spleet Africa",
     description:
       "Spleet is a rental solution for landlords and tenants. On Spleet you can lease your apartment, rent a space, take a rental loan, verify tenants and automatically collect rent.",
