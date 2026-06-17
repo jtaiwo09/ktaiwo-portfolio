@@ -25,6 +25,7 @@ const ProjectCard = ({ project }: Props) => {
             title={project.name}
             category={project.category}
             image={project.image}
+            sizes="(max-width: 768px) 100vw, 540px"
           />
         </div>
         <div className="flex flex-1 flex-col p-6">

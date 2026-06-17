@@ -22,7 +22,10 @@ const Experience = () => {
 
         <div className="flex flex-col gap-12">
           {experience.map((job, i) => (
-            <Reveal key={job.company} transition={{ delay: 0.05 * i, duration: 0.5 }}>
+            <Reveal
+              key={job.company}
+              transition={{ delay: 0.05 * i, duration: 0.5 }}
+            >
               <article className="relative sm:pl-10">
                 {/* Node */}
                 <span className="absolute left-[-4px] top-2 hidden h-2.5 w-2.5 rounded-full bg-brand dark:bg-primary ring-4 ring-white dark:ring-secondary sm:block" />

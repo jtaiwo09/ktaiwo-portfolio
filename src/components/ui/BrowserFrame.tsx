@@ -10,14 +10,25 @@ interface BrowserFrameProps {
   image?: string;
   /** Show the browser chrome bar. Set false to use as flush card media. */
   chrome?: boolean;
+  /** Prioritize loading (use for above-the-fold / LCP images only). */
+  priority?: boolean;
+  /** Responsive sizes hint so the optimizer serves the right resolution. */
+  sizes?: string;
 }
+
+type MediaProps = Pick<
+  BrowserFrameProps,
+  "title" | "category" | "image" | "priority" | "sizes"
+>;
 
 /** The screenshot-or-placeholder viewport, shared by both modes. */
 const Media = ({
   title,
   category,
   image,
-}: Pick<BrowserFrameProps, "title" | "category" | "image">) => (
+  priority,
+  sizes = "(max-width: 768px) 100vw, 600px",
+}: MediaProps) => (
   <div className="relative aspect-[16/10] w-full">
     {image ? (
       <Image
@@ -25,7 +36,10 @@ const Media = ({
         alt={`${title} screenshot`}
         fill
         className="object-cover object-top"
-        sizes="(max-width: 768px) 100vw, 600px"
+        sizes={sizes}
+        priority={priority}
+        // Below-the-fold images stay lazy; above-the-fold ones get priority.
+        loading={priority ? "eager" : "lazy"}
       />
     ) : (
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-brand/10 via-transparent to-brand/5 dark:from-primary/10 dark:to-accent">
@@ -52,8 +66,19 @@ const BrowserFrame = ({
   url,
   image,
   chrome = true,
+  priority,
+  sizes,
 }: BrowserFrameProps) => {
-  if (!chrome) return <Media title={title} category={category} image={image} />;
+  if (!chrome)
+    return (
+      <Media
+        title={title}
+        category={category}
+        image={image}
+        priority={priority}
+        sizes={sizes}
+      />
+    );
 
   const host = url ? url.replace(/^https?:\/\//, "").replace(/\/.*$/, "") : "";
 
@@ -70,7 +95,13 @@ const BrowserFrame = ({
           </span>
         )}
       </div>
-      <Media title={title} category={category} image={image} />
+      <Media
+        title={title}
+        category={category}
+        image={image}
+        priority={priority}
+        sizes={sizes}
+      />
     </div>
   );
 };

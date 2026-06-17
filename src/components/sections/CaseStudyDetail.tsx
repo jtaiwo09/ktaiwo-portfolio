@@ -103,6 +103,8 @@ const CaseStudyDetail = ({ project }: { project: CaseStudy }) => {
           category={project.category}
           url={project.liveUrl}
           image={project.image}
+          priority
+          sizes="(max-width: 1024px) 100vw, 1000px"
         />
       </Reveal>
 

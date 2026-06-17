@@ -92,4 +92,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  /* Prevent decorative/absolute elements from causing horizontal scroll.
+     `clip` (vs hidden) avoids breaking sticky positioning. */
+  overflow-x: clip;
 }

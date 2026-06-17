@@ -50,6 +50,7 @@ const About = () => {
               src={Profile}
               alt={`Portrait of Taiwo Joseph`}
               placeholder="blur"
+              sizes="(max-width: 768px) 100vw, 320px"
               className="aspect-square w-full rounded-2xl object-cover grayscale transition-all duration-300 hover:grayscale-0"
             />
           </Reveal>

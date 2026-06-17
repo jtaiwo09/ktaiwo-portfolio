@@ -9,19 +9,19 @@ import { profile, positioning, heroStats, industries } from "@/data/profile";
 
 const Hero = () => {
   return (
-    <section className="container relative flex min-h-[88vh] flex-col justify-center py-24">
+    <section className="container relative flex min-h-[88vh] flex-col justify-center overflow-hidden py-20 md:py-24">
       {/* Soft ambient accent */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-10 right-0 -z-10 h-72 w-72 rounded-full bg-brand/10 dark:bg-primary/10 blur-3xl"
       />
 
-      <Reveal>
+      {/* <Reveal>
         <p className="eyebrow mb-5 flex items-center gap-2">
-          {/* <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-green-500" /> */}
+          <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-green-500" />
           {profile.availability}
         </p>
-      </Reveal>
+      </Reveal> */}
 
       <Reveal transition={{ delay: 0.05, duration: 0.5 }}>
         <h1 className="text-4xl font-extrabold leading-[1.15] tracking-tight text-secondary dark:text-info sm:text-5xl md:text-6xl lg:text-7xl">
