@@ -2,26 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply text-secondary dark:text-info antialiased;
+  }
+  ::selection {
+    @apply bg-brand/20 dark:bg-primary/30;
+  }
+  /* Custom scrollbar for a more polished feel */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-warning/40 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-warning/70;
+  }
+}
+
 @layer components {
   .btn {
-    @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-center border-transparent text-center transition-all duration-200 min-h-12 rounded ease-out font-mono text-[15px];
+    @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-center gap-2 border-transparent text-center transition-all duration-200 min-h-12 rounded-md ease-out font-mono text-[15px] px-5;
   }
   .btn-outline {
-    @apply border border-green-700 dark:border-primary hover:border-primary hover:bg-secondary hover:text-primary dark:text-primary dark:hover:bg-accent;
+    @apply border border-brand dark:border-primary text-brand dark:text-primary hover:bg-brand/[0.06] dark:hover:bg-primary/[0.08];
   }
-  .writing-mode {
-    text-orientation: sideways;
+  .btn-primary {
+    @apply bg-brand text-white dark:bg-primary dark:text-secondary hover:opacity-90 font-medium;
+  }
+
+  /* The recurring "mono accent label" used across section eyebrows */
+  .eyebrow {
+    @apply font-mono text-brand dark:text-primary text-sm tracking-wide;
+  }
+
+  /* The recurring accent-text pairing (light: green, dark: teal) */
+  .accent {
+    @apply text-brand dark:text-primary;
+  }
+
+  /* Base muted body text */
+  .muted {
+    @apply text-warning;
+  }
+
+  /* Shared card surface used by all card-like components */
+  .surface {
+    @apply rounded-xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-accent/60 backdrop-blur-sm;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-[90%] lg:max-w-[1100px] mx-auto w-full;
   }
   .writing-mode {
     writing-mode: vertical-lr;
+    text-orientation: sideways;
   }
-}
-@layer utilities {
-  .container {
-    @apply max-w-[90%] lg:max-w-[75%] mx-auto w-full pt-[100px];
+  /* Edge fade mask for marquees */
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
   }
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }

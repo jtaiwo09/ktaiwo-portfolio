@@ -7,52 +7,49 @@ import { FiMoon, FiSun } from "react-icons/fi";
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
-  const audioRef = useRef<any>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
+    // Mount gate: theme is unknown during SSR, so we render a neutral
+    // placeholder until the client mounts to avoid a hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     if (audioRef.current) {
       audioRef.current.volume = 0.6;
     }
-  }, [audioRef?.current]);
+  }, []);
 
   const toggleTheme = () => {
-    if (resolvedTheme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-    audioRef.current.play();
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    audioRef.current?.play().catch(() => {});
   };
 
   if (!mounted)
     return (
       <Image
         src="data:image/svg+xml;base64,PHN2ZyBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBoZWlnaHQ9IjIwMHB4IiB3aWR0aD0iMjAwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4PSIyIiB5PSIyIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHJ4PSIyIj48L3JlY3Q+PC9zdmc+Cg=="
-        width={36}
-        height={36}
-        sizes="36x36"
-        alt="Loading Light/Dark Toggle"
+        width={24}
+        height={24}
+        sizes="24x24"
+        alt="Loading theme toggle"
         priority={false}
-        title="Loading Light/Dark Toggle"
       />
     );
+
   return (
     <>
-      {resolvedTheme === "dark" ? (
-        <FiSun
-          className="text-2xl cursor-pointer"
-          onClick={toggleTheme}
-          title="Activate dark mode"
-        />
-      ) : (
-        <FiMoon
-          className="text-2xl cursor-pointer"
-          onClick={toggleTheme}
-          title="Activate light mode"
-        />
-      )}
-      <audio src="/sounds/click.wav" ref={audioRef} className="hidden"></audio>
+      <button
+        onClick={toggleTheme}
+        aria-label="Toggle color theme"
+        className="text-secondary dark:text-primary transition-transform hover:scale-110"
+      >
+        {resolvedTheme === "dark" ? (
+          <FiSun className="text-xl" />
+        ) : (
+          <FiMoon className="text-xl" />
+        )}
+      </button>
+      <audio src="/sounds/click.wav" ref={audioRef} className="hidden" />
     </>
   );
 };

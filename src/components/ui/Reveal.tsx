@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { motion, useAnimation, useInView, useTransform } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 interface IProps {
   extraClass?: string;
@@ -13,40 +13,40 @@ interface IProps {
   visible?: {};
   transition?: {};
 }
+
+/**
+ * Scroll-triggered reveal. The shared animation primitive used everywhere so
+ * motion stays consistent across the site.
+ */
 const Reveal = ({
   children,
   extraClass,
   innerClass,
   slideClass,
-  showSlide = true,
-  hidden = { opacity: 0, y: 100 },
+  showSlide = false,
+  hidden = { opacity: 0, y: 40 },
   visible = { opacity: 1, y: 0 },
-  transition = { duration: 0.5, delay: 0.25 },
+  transition = { duration: 0.5, delay: 0.1 },
 }: IProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
   const mainControls = useAnimation();
   const slideControls = useAnimation();
-
-  // const trans = useTransform({});
 
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
       slideControls.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, mainControls, slideControls]);
 
   return (
     <div
       ref={ref}
-      className={twMerge("relative overflow-hidden w-fit", extraClass)}
+      className={twMerge(`relative ${showSlide ? "overflow-hidden" : ""}`, extraClass)}
     >
       <motion.div
-        variants={{
-          hidden: hidden,
-          visible: visible,
-        }}
+        variants={{ hidden, visible }}
         initial="hidden"
         animate={mainControls}
         transition={{ ...transition, duration: 0.5 }}
@@ -60,7 +60,7 @@ const Reveal = ({
         animate={slideControls}
         transition={{ ...transition, ease: "easeIn" }}
         className={twMerge(
-          `absolute top-1 bottom-4 left-0 right-0 dark:bg-primary bg-green-700 z-20 ${
+          `absolute top-1 bottom-4 left-0 right-0 dark:bg-primary bg-brand z-20 ${
             showSlide ? "block" : "hidden"
           }`,
           slideClass
