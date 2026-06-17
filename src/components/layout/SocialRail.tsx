@@ -18,7 +18,7 @@ const SocialRail = () => {
       variants={variants}
       initial="hide"
       animate="visible"
-      className="fixed bottom-0 left-8 hidden lg:block"
+      className="fixed bottom-0 left-6 hidden xl:block"
     >
       <div className="flex flex-col items-center gap-6 after:h-28 after:w-px after:bg-warning/50 after:content-['']">
         {socials.map((el) => (
