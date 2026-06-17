@@ -11,7 +11,7 @@ const Experience = () => {
   return (
     <Section id="experience">
       <SectionTitle
-        index="02"
+        index="04"
         title="Experience"
         subtitle="Roles where I owned frontend architecture, shipped business-critical products, and led delivery."
       />

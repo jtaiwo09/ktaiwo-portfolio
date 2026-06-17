@@ -12,7 +12,7 @@ const Writing = () => {
   return (
     <Section id="writing">
       <SectionTitle
-        index="07"
+        index="10"
         title="Writing & Thought Leadership"
         subtitle="Engineering topics I work in and write about: performance, real-time UX, payments, and frontend architecture."
       />

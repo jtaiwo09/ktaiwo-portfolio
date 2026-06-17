@@ -47,11 +47,24 @@ export interface ExperienceItem {
   stack: string[];
 }
 
+/** One layer in a system architecture diagram (top-to-bottom flow). */
+export interface ArchitectureLayer {
+  label: string;
+  /** Short note on the layer's role / tech. */
+  note?: string;
+}
+
 export interface CaseStudy {
   slug: string;
   name: string;
   /** e.g. "FinTech · Crypto" */
   category: string;
+  /** Industry vertical, e.g. "FinTech". */
+  industry: string;
+  /** Who uses the product. */
+  targetUsers: string;
+  /** The business objective the product serves. */
+  businessGoals: string;
   /** Short one-liner for cards. */
   tagline: string;
   liveUrl?: string;
@@ -67,8 +80,12 @@ export interface CaseStudy {
   results: string[];
   takeaways: string[];
   stack: string[];
-  /** Optional real screenshot path under /public. Falls back to a generated frame when absent. */
+  /** Frontend-perspective system architecture (rendered as a diagram). */
+  architecture: ArchitectureLayer[];
+  /** Optional hero screenshot path under /public (e.g. "/images/gosource.png"). */
   image?: string;
+  /** Optional additional screenshots for the case-study gallery. */
+  gallery?: string[];
 }
 
 export interface SkillGroup {
@@ -78,6 +95,13 @@ export interface SkillGroup {
 }
 
 export interface Differentiator {
+  title: string;
+  description: string;
+  icon: IconType;
+}
+
+/** Generic icon + title + description card (impact, process steps, exploring). */
+export interface FeatureItem {
   title: string;
   description: string;
   icon: IconType;

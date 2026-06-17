@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa6";
 import { FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
 import type { NavLink, Profile, Stat } from "@/types";
 
-/** Canonical production URL — single source of truth for SEO/metadata. */
+/** Canonical production URL - single source of truth for SEO/metadata. */
 export const siteUrl = "https://ktaiwo.vercel.app";
 
 /** OG/Twitter share image. */
@@ -30,7 +30,7 @@ export const knowsAbout = [
 
 export const profile: Profile = {
   name: "Taiwo Joseph",
-  role: "Frontend Engineer & Frontend Lead",
+  role: "Frontend Lead & Technical Lead",
   tagline:
     "I build fast, reliable web products for FinTech, marketplaces, and logistics.",
   location: "Lagos, Nigeria · Available worldwide",

@@ -8,14 +8,53 @@ interface BrowserFrameProps {
   url?: string;
   /** Real screenshot path under /public. Falls back to a generated panel. */
   image?: string;
+  /** Show the browser chrome bar. Set false to use as flush card media. */
+  chrome?: boolean;
 }
 
+/** The screenshot-or-placeholder viewport, shared by both modes. */
+const Media = ({
+  title,
+  category,
+  image,
+}: Pick<BrowserFrameProps, "title" | "category" | "image">) => (
+  <div className="relative aspect-[16/10] w-full">
+    {image ? (
+      <Image
+        src={image}
+        alt={`${title} screenshot`}
+        fill
+        className="object-cover object-top"
+        sizes="(max-width: 768px) 100vw, 600px"
+      />
+    ) : (
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-brand/10 via-transparent to-brand/5 dark:from-primary/10 dark:to-accent">
+        <div className="absolute inset-0 opacity-[0.4] [background-image:linear-gradient(to_right,rgba(120,120,120,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(120,120,120,0.12)_1px,transparent_1px)] [background-size:28px_28px]" />
+        <span className="relative font-mono text-xs uppercase tracking-widest accent">
+          {category}
+        </span>
+        <span className="relative mt-2 text-3xl md:text-4xl font-bold tracking-tight text-secondary dark:text-info">
+          {title}
+        </span>
+      </div>
+    )}
+  </div>
+);
+
 /**
- * A browser-chrome frame for project visuals. Shows a real screenshot when one
- * is provided, otherwise renders a polished branded placeholder, so the site
- * looks complete before screenshots exist.
+ * Project visual. With `chrome` (default) it renders a self-contained browser
+ * frame; without it, just the media so it can sit flush inside a card.
+ * Shows a real screenshot when provided, otherwise a branded placeholder.
  */
-const BrowserFrame = ({ title, category, url, image }: BrowserFrameProps) => {
+const BrowserFrame = ({
+  title,
+  category,
+  url,
+  image,
+  chrome = true,
+}: BrowserFrameProps) => {
+  if (!chrome) return <Media title={title} category={category} image={image} />;
+
   const host = url ? url.replace(/^https?:\/\//, "").replace(/\/.*$/, "") : "";
 
   return (
@@ -31,29 +70,7 @@ const BrowserFrame = ({ title, category, url, image }: BrowserFrameProps) => {
           </span>
         )}
       </div>
-
-      {/* Viewport */}
-      <div className="relative aspect-[16/10] w-full">
-        {image ? (
-          <Image
-            src={image}
-            alt={`${title} screenshot`}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 100vw, 600px"
-          />
-        ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-brand/10 via-transparent to-brand/5 dark:from-primary/10 dark:to-accent">
-            <div className="absolute inset-0 opacity-[0.4] [background-image:linear-gradient(to_right,rgba(120,120,120,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(120,120,120,0.12)_1px,transparent_1px)] [background-size:28px_28px]" />
-            <span className="relative font-mono text-xs uppercase tracking-widest accent">
-              {category}
-            </span>
-            <span className="relative mt-2 text-3xl md:text-4xl font-bold tracking-tight text-secondary dark:text-info">
-              {title}
-            </span>
-          </div>
-        )}
-      </div>
+      <Media title={title} category={category} image={image} />
     </div>
   );
 };

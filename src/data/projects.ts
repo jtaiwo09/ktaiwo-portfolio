@@ -4,7 +4,7 @@ import type { CaseStudy } from "@/types";
  * Detailed case studies. The `featured` ones render as full expandable studies;
  * all of them appear in the Work grid.
  *
- * Copy is qualitative and truthful — add confirmed numbers to the `results`
+ * Copy is qualitative and truthful - add confirmed numbers to the `results`
  * strings where you have them. Add a real screenshot by dropping a file in
  * /public/images and setting `image: "/images/<file>"` on the project.
  */
@@ -13,6 +13,10 @@ export const projects: CaseStudy[] = [
     slug: "gosource",
     name: "GoSource",
     category: "B2B · Procurement & Supply Chain",
+    industry: "B2B / Procurement & Supply Chain",
+    targetUsers: "Food businesses, procurement teams, and their suppliers",
+    businessGoals:
+      "Streamline sourcing, ordering, and inventory so operations teams move faster with end-to-end visibility.",
     image: "/images/gosource.png",
     tagline:
       "B2B procurement platform that streamlines ordering, suppliers, and inventory for food businesses.",
@@ -46,11 +50,21 @@ export const projects: CaseStudy[] = [
       "Investing early in module and state boundaries pays compounding dividends in B2B products.",
     ],
     stack: ["Vue.js", "Nuxt.js", "TypeScript", "Pinia", "Tailwind CSS"],
+    architecture: [
+      { label: "Nuxt (Vue 3) Web App", note: "SSR + SPA · Pinia state · Tailwind UI" },
+      { label: "REST API Layer", note: "Auth, orders, suppliers, inventory" },
+      { label: "Backend Services", note: "Procurement & order-processing logic" },
+      { label: "Database", note: "Orders, suppliers, inventory records" },
+    ],
   },
   {
     slug: "relay-pilot",
     name: "Relay Pilot",
     category: "Logistics · Real-Time Delivery",
+    industry: "Logistics & Delivery",
+    targetUsers: "Logistics companies, riders, and business shippers",
+    businessGoals:
+      "Coordinate live deliveries with real-time tracking and communication across every party.",
     image: "/images/relay-pilot.png",
     tagline:
       "Real-time logistics platform coordinating companies, riders, and businesses with live tracking and messaging.",
@@ -85,11 +99,22 @@ export const projects: CaseStudy[] = [
       "Mobile-first isn't a viewport; it's an assumption about network and attention.",
     ],
     stack: ["Vue.js", "Nuxt.js", "TypeScript", "WebSockets", "Tailwind CSS"],
+    architecture: [
+      { label: "Nuxt (Vue 3) Web App", note: "Role-based dashboards · mobile-first chat" },
+      { label: "REST API + WebSocket Gateway", note: "Live messaging, presence, trip events" },
+      { label: "Backend Services", note: "Dispatch, tracking, notifications" },
+      { label: "Object Storage", note: "Presigned-URL uploads (delivery proof)" },
+      { label: "Database", note: "Trips, users, messages" },
+    ],
   },
   {
     slug: "resolve",
     name: "Resolve",
     category: "FinTech · Custodial Crypto Wallet",
+    industry: "FinTech / Crypto",
+    targetUsers: "Retail crypto users holding and moving funds",
+    businessGoals:
+      "Let users custody balances and transact with live, trustworthy market data, securely.",
     image: "/images/resolve.png",
     tagline:
       "Custodial crypto wallet with live market data, secure transaction flows, and fraud controls.",
@@ -129,11 +154,21 @@ export const projects: CaseStudy[] = [
       "Quidax API",
       "Tailwind CSS",
     ],
+    architecture: [
+      { label: "Next.js Web App", note: "Wallet UI · secure auth · transaction flows" },
+      { label: "BFF / API Routes", note: "Session, request signing, access guards" },
+      { label: "Quidax API (external)", note: "Balances, orders, transactions" },
+      { label: "WebSocket Price Feed", note: "Real-time market data" },
+    ],
   },
   {
     slug: "cititasker",
     name: "CitiTasker",
     category: "Marketplace · Payments & Escrow",
+    industry: "Marketplace / Payments",
+    targetUsers: "People outsourcing tasks and local service providers",
+    businessGoals:
+      "Enable trusted, escrow-backed transactions between strangers on a two-sided marketplace.",
     image: "/images/cititasker.png",
     tagline:
       "Task marketplace connecting people who need tasks done with local providers, with escrow-backed payments.",
@@ -175,11 +210,21 @@ export const projects: CaseStudy[] = [
       "React Query",
       "Tailwind CSS",
     ],
+    architecture: [
+      { label: "Next.js (App Router) Web App", note: "Server Actions · HTTP-only cookie sessions" },
+      { label: "API Layer", note: "Tasks, proposals, disputes, notifications" },
+      { label: "Paystack (external)", note: "Payments + escrow" },
+      { label: "Database", note: "Users, tasks, transactions" },
+    ],
   },
   {
     slug: "spleet",
     name: "Spleet Africa",
     category: "PropTech · Rentals & Financing",
+    industry: "PropTech / Rentals",
+    targetUsers: "Landlords and tenants (renters)",
+    businessGoals:
+      "Make renting friction-free and financeable, with verification, automated rent, and rental loans.",
     image: "/images/spleet.png",
     tagline:
       "Rental platform for landlords and tenants, leasing, tenant verification, automated rent, and rental loans.",
@@ -212,5 +257,11 @@ export const projects: CaseStudy[] = [
       "Financial UX in PropTech must make trust legible at every step.",
     ],
     stack: ["Vue.js", "Nuxt.js", "Vuex", "Pinia", "TypeScript", "Tailwind CSS"],
+    architecture: [
+      { label: "Nuxt (Vue 3) Web App", note: "Marketplace + financing flows · Vuex/Pinia" },
+      { label: "REST API Layer", note: "Listings, leases, payments, KYC" },
+      { label: "Backend Services", note: "Rent automation, credit/loan logic" },
+      { label: "Database", note: "Listings, tenants, transactions" },
+    ],
   },
 ];

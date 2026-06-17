@@ -20,7 +20,7 @@ const Testimonials = () => {
   return (
     <Section id="testimonials">
       <SectionTitle
-        index="06"
+        index="09"
         title="Recognition & References"
         subtitle="Verified recognition, the themes references consistently raise, and recommendations available on request."
       />

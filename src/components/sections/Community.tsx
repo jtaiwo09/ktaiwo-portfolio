@@ -13,7 +13,7 @@ const Community = () => {
   return (
     <Section id="open-source">
       <SectionTitle
-        index="08"
+        index="11"
         title="Open Source & Community"
         subtitle="Public code from shipped products, plus how I contribute beyond writing it myself."
       />

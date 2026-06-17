@@ -30,6 +30,12 @@ const Hero = () => {
         </h1>
       </Reveal>
 
+      <Reveal transition={{ delay: 0.09, duration: 0.5 }}>
+        <p className="mt-3 font-mono text-base font-medium accent sm:text-lg">
+          {profile.role}
+        </p>
+      </Reveal>
+
       <Reveal transition={{ delay: 0.12, duration: 0.5 }}>
         <h2 className="mt-4 max-w-4xl text-2xl font-bold !leading-[1.3] text-warning sm:text-3xl md:text-4xl lg:text-[44px]">
           {profile.tagline}

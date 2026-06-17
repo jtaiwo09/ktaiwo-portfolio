@@ -10,7 +10,7 @@ const Skills = () => {
   return (
     <Section id="skills">
       <SectionTitle
-        index="04"
+        index="06"
         title="Skills & Toolkit"
         subtitle="Organized by what I actually use them for: from shipping interfaces to architecting and leading."
       />

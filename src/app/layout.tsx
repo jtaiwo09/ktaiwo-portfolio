@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const title = "Taiwo Joseph | Frontend Engineer";
+const title = "Taiwo Joseph | Frontend Lead & Engineer";
 const titleDefault =
-  "Taiwo Joseph | Frontend Engineer for FinTech, Marketplaces & Logistics";
+  "Taiwo Joseph | Frontend Lead & Engineer for FinTech, Marketplaces & Logistics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -24,7 +24,7 @@ const JsonLd = () => {
         name: profile.name,
         url: siteUrl,
         image: ogImage,
-        jobTitle: "Frontend Engineer",
+        jobTitle: "Frontend Engineer & Technical Lead",
         description: siteDescription,
         email: `mailto:${profile.email}`,
         telephone: profile.phone,

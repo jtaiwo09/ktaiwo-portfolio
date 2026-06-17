@@ -2,22 +2,22 @@ import React from "react";
 import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Reveal from "@/components/ui/Reveal";
-import CaseStudy from "./CaseStudy";
+import ProjectCard from "@/components/ui/ProjectCard";
 import { projects } from "@/data/projects";
 
 const Work = () => {
   return (
     <Section id="work">
       <SectionTitle
-        index="03"
+        index="05"
         title="Selected Work"
-        subtitle="A few products I've shipped: the problem, what I built, and the impact. Expand any one for the full case study."
+        subtitle="Products I've shipped across FinTech, logistics, PropTech, and marketplaces. Open any one for the full case study, problem, architecture, and results."
       />
 
-      <div className="flex flex-col gap-10">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {projects.map((project, i) => (
-          <Reveal key={project.slug} transition={{ delay: 0.05, duration: 0.5 }}>
-            <CaseStudy data={project} flip={i % 2 === 1} />
+          <Reveal key={project.slug} transition={{ delay: 0.05 * i, duration: 0.5 }}>
+            <ProjectCard project={project} />
           </Reveal>
         ))}
       </div>

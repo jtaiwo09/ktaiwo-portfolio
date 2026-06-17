@@ -13,7 +13,7 @@ const Contact = () => {
     <Section id="contact" className="py-24 md:py-32">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal extraClass="mx-auto">
-          <p className="eyebrow">09. What&apos;s next</p>
+          <p className="eyebrow">12. What&apos;s next</p>
         </Reveal>
 
         <Reveal extraClass="mx-auto" transition={{ delay: 0.1, duration: 0.5 }}>

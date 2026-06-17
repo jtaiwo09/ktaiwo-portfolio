@@ -4,7 +4,7 @@ import type { ExperienceItem } from "@/types";
  * Professional experience timeline (most recent first).
  *
  * Copy is qualitative and truthful. Where you can confirm a hard number
- * (e.g. "improved engagement by 30%"), edit the achievement string to add it —
+ * (e.g. "improved engagement by 30%"), edit the achievement string to add it -
  * quantified results convert far better than qualitative ones.
  */
 export const experience: ExperienceItem[] = [

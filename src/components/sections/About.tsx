@@ -11,7 +11,7 @@ const About = () => {
   return (
     <Section id="about">
       <SectionTitle
-        index="01"
+        index="02"
         title="About"
         subtitle="What I do, how I think, and the kind of problems I'm built to solve."
       />
