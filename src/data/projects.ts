@@ -51,9 +51,15 @@ export const projects: CaseStudy[] = [
     ],
     stack: ["Vue.js", "Nuxt.js", "TypeScript", "Pinia", "Tailwind CSS"],
     architecture: [
-      { label: "Nuxt (Vue 3) Web App", note: "SSR + SPA · Pinia state · Tailwind UI" },
+      {
+        label: "Nuxt (Vue 3) Web App",
+        note: "SSR + SPA · Pinia state · Tailwind UI",
+      },
       { label: "REST API Layer", note: "Auth, orders, suppliers, inventory" },
-      { label: "Backend Services", note: "Procurement & order-processing logic" },
+      {
+        label: "Backend Services",
+        note: "Procurement & order-processing logic",
+      },
       { label: "Database", note: "Orders, suppliers, inventory records" },
     ],
   },
@@ -68,7 +74,7 @@ export const projects: CaseStudy[] = [
     image: "/images/relay-pilot.png",
     tagline:
       "Real-time logistics platform coordinating companies, riders, and businesses with live tracking and messaging.",
-    liveUrl: "https://relaypilot.com",
+    liveUrl: "https://app.relaypilot.com/create-account",
     repoUrl: "https://github.com/ipcafrica/relay-frontend",
     period: "2025 to Present",
     role: "Frontend Engineer",
@@ -98,12 +104,21 @@ export const projects: CaseStudy[] = [
       "Real-time UX lives or dies on state design: model it deliberately, not incidentally.",
       "Mobile-first isn't a viewport; it's an assumption about network and attention.",
     ],
-    stack: ["Vue.js", "Nuxt.js", "TypeScript", "WebSockets", "Tailwind CSS"],
+    stack: ["Next.js", "TypeScript", "WebSockets", "Tailwind CSS"],
     architecture: [
-      { label: "Nuxt (Vue 3) Web App", note: "Role-based dashboards · mobile-first chat" },
-      { label: "REST API + WebSocket Gateway", note: "Live messaging, presence, trip events" },
+      {
+        label: "Next.js Web App",
+        note: "Role-based dashboards · mobile-first chat",
+      },
+      {
+        label: "REST API + WebSocket Gateway",
+        note: "Live messaging, presence, trip events",
+      },
       { label: "Backend Services", note: "Dispatch, tracking, notifications" },
-      { label: "Object Storage", note: "Presigned-URL uploads (delivery proof)" },
+      {
+        label: "Object Storage",
+        note: "Presigned-URL uploads (delivery proof)",
+      },
       { label: "Database", note: "Trips, users, messages" },
     ],
   },
@@ -155,9 +170,18 @@ export const projects: CaseStudy[] = [
       "Tailwind CSS",
     ],
     architecture: [
-      { label: "Next.js Web App", note: "Wallet UI · secure auth · transaction flows" },
-      { label: "BFF / API Routes", note: "Session, request signing, access guards" },
-      { label: "Quidax API (external)", note: "Balances, orders, transactions" },
+      {
+        label: "Next.js Web App",
+        note: "Wallet UI · secure auth · transaction flows",
+      },
+      {
+        label: "BFF / API Routes",
+        note: "Session, request signing, access guards",
+      },
+      {
+        label: "Quidax API (external)",
+        note: "Balances, orders, transactions",
+      },
       { label: "WebSocket Price Feed", note: "Real-time market data" },
     ],
   },
@@ -211,7 +235,10 @@ export const projects: CaseStudy[] = [
       "Tailwind CSS",
     ],
     architecture: [
-      { label: "Next.js (App Router) Web App", note: "Server Actions · HTTP-only cookie sessions" },
+      {
+        label: "Next.js (App Router) Web App",
+        note: "Server Actions · HTTP-only cookie sessions",
+      },
       { label: "API Layer", note: "Tasks, proposals, disputes, notifications" },
       { label: "Paystack (external)", note: "Payments + escrow" },
       { label: "Database", note: "Users, tasks, transactions" },
@@ -258,7 +285,10 @@ export const projects: CaseStudy[] = [
     ],
     stack: ["Vue.js", "Nuxt.js", "Vuex", "Pinia", "TypeScript", "Tailwind CSS"],
     architecture: [
-      { label: "Nuxt (Vue 3) Web App", note: "Marketplace + financing flows · Vuex/Pinia" },
+      {
+        label: "Nuxt (Vue 3) Web App",
+        note: "Marketplace + financing flows · Vuex/Pinia",
+      },
       { label: "REST API Layer", note: "Listings, leases, payments, KYC" },
       { label: "Backend Services", note: "Rent automation, credit/loan logic" },
       { label: "Database", note: "Listings, tenants, transactions" },
