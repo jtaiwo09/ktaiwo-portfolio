@@ -294,4 +294,74 @@ export const projects: CaseStudy[] = [
       { label: "Database", note: "Listings, tenants, transactions" },
     ],
   },
+  {
+    slug: "videosqueeze",
+    name: "VideoSqueeze",
+    category: "Product · Developer Tooling & Media",
+    industry: "Developer Tools / Media",
+    targetUsers:
+      "Anyone who needs to shrink large screen recordings without uploading them to a cloud service",
+    businessGoals:
+      "Make compressing big videos fast and effortless while keeping files 100% private and on-device.",
+    image: "/images/videosqueeze.png",
+    tagline:
+      "Fully-local Mac video compressor with a Next.js marketing & download site — fast, private, open source.",
+    liveUrl: "https://videosqueeze-web.vercel.app",
+    repoUrl: "https://github.com/jtaiwo09/videosqueeze",
+    period: "2026",
+    role: "Frontend Engineer (web app & desktop UI) · Product Design",
+    featured: true,
+    overview:
+      "VideoSqueeze is a self-initiated product that compresses large screen recordings locally on a Mac — no uploads, no account. I built the full frontend: the Next.js marketing and download website, and the desktop app's React interface, from drag-and-drop and quality presets to a synchronized side-by-side video comparison player.",
+    problem:
+      "Most online compressors force you to upload multi-gigabyte recordings to a server — slow, bandwidth-heavy, and a privacy concern. The product needed a frontend that made on-device compression feel effortless for non-technical users, plus a fast, SEO-friendly site to distribute it.",
+    solution: [
+      "Built the marketing & download site in Next.js (App Router) — statically generated, with full SEO: metadata, Open Graph image, sitemap, robots, and SoftwareApplication JSON-LD. Deployed on Vercel.",
+      "Designed and built the desktop app's React UI: drag-and-drop intake, High/Medium/Low/Custom quality presets, an accurate pre-compression size estimate, and live encoding progress.",
+      "Engineered a synchronized dual-video comparison player — side-by-side and a draggable split-slider — with one shared transport and drift correction so both videos stay in lockstep.",
+      "Abstracted the work behind a TypeScript CompressionEngine interface so the same UI can drive native compression on desktop today and run in-browser (WebAssembly) when hosted later.",
+      "Designed a clean, dark, responsive interface and a reusable Tailwind design system shared across the app and the site.",
+    ],
+    challenges: [
+      "Building a frame-accurate, synchronized two-video player in React without drift or jank.",
+      "Designing a compression UX that's trustworthy for non-technical users — clear estimates, live progress, and a preview-before-you-save flow.",
+      "Keeping one React UI portable across two runtimes (native desktop and future in-browser) behind a single engine contract.",
+    ],
+    results: [
+      "A polished, fully responsive desktop UI plus a live, SEO-optimized download site shipped on Vercel.",
+      "Side-by-side comparison that lets users verify quality before committing — a real trust feature.",
+      "Open-sourced on GitHub with a versioned release; the engine abstraction keeps a future web build a UI-free swap.",
+    ],
+    takeaways: [
+      "A clean engine interface lets a single frontend target multiple runtimes without rewrites.",
+      "For a tool, trust is the UX: accurate estimates, visible progress, and verify-before-save matter more than chrome.",
+    ],
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Tauri",
+      "FFmpeg",
+      "Vercel",
+    ],
+    architecture: [
+      {
+        label: "Next.js Download Site",
+        note: "App Router · SSG · SEO/OG/JSON-LD · Vercel",
+      },
+      {
+        label: "React Desktop UI (Tauri shell)",
+        note: "Drag-drop, presets, progress, compare player",
+      },
+      {
+        label: "CompressionEngine (TypeScript interface)",
+        note: "Native now · WebAssembly-ready for web",
+      },
+      {
+        label: "Local Compression (FFmpeg)",
+        note: "Hardware-accelerated · 100% offline",
+      },
+    ],
+  },
 ];
