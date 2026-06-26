@@ -1,6 +1,6 @@
 import { FaGithub } from "react-icons/fa6";
 import { FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
-import type { NavLink, Profile, Stat } from "@/types";
+import type { NavLink, Profile } from "@/types";
 
 /** Canonical production URL - single source of truth for SEO/metadata. */
 export const siteUrl = "https://ktaiwo.vercel.app";
@@ -55,18 +55,6 @@ export const profile: Profile = {
  */
 export const positioning =
   "Frontend engineer with 5+ years turning complex business requirements into scalable, production-grade user experiences. I've led frontend across FinTech, payments, PropTech, logistics, and B2B marketplaces, shipping real-time platforms, secure payment and escrow flows, and high-performance dashboards used by businesses and their customers.";
-
-/**
- * Headline stats shown in the hero band.
- * 5+ years, 6 industries are factual; 40% / 60% are real wins from the Wosom
- * role. Update these only with numbers you can stand behind.
- */
-export const heroStats: Stat[] = [
-  { value: "5+", label: "Years building for the web" },
-  { value: "6", label: "Industries shipped in" },
-  { value: "40%", label: "Faster load times delivered" },
-  { value: "60%", label: "Fewer network requests" },
-];
 
 export const industries = [
   "FinTech & Payments",

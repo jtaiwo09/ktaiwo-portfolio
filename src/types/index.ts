@@ -11,13 +11,6 @@ export interface SocialLink {
   icon: IconType;
 }
 
-export interface Stat {
-  /** The headline figure, e.g. "5+", "40%". */
-  value: string;
-  /** Short description of what the figure measures. */
-  label: string;
-}
-
 export interface Profile {
   name: string;
   /** Role label shown as the eyebrow / title chip. */

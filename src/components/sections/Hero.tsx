@@ -1,11 +1,9 @@
 "use client";
-import React from "react";
 import { FiArrowRight, FiFileText } from "react-icons/fi";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
-import StatBlock from "@/components/ui/StatBlock";
 import Tag from "@/components/ui/Tag";
-import { profile, positioning, heroStats, industries } from "@/data/profile";
+import { profile, positioning, industries } from "@/data/profile";
 
 const Hero = () => {
   return (
@@ -71,10 +69,6 @@ const Hero = () => {
           </Button>
         </div>
       </Reveal>
-
-      <div className="mt-16 border-t border-black/[0.06] pt-10 dark:border-white/[0.06]">
-        <StatBlock stats={heroStats} />
-      </div>
     </section>
   );
 };
